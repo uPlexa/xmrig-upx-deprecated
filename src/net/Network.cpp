@@ -59,10 +59,11 @@ Network::Network(xmrig::Controller *controller) :
     else {
         m_strategy = new SinglePoolStrategy(pools.front(), controller->config()->retryPause(), controller->config()->retries(), this);
     }
-
+    /*
     if (controller->config()->donateLevel() > 0) {
         m_donate = new DonateStrategy(controller->config()->donateLevel(), controller->config()->pools().front().user(), controller->config()->algorithm().algo(), this);
-    }
+    }*/
+    //Broken
 
     m_timer.data = this;
     uv_timer_init(uv_default_loop(), &m_timer);

@@ -71,7 +71,7 @@ static AlgoData const algorithms[] = {
 #   endif
 
 #   ifndef XMRIG_NO_UPLEXA
-    { "cryptonight-upx",      "cn-lite",      xmrig::CRYPTONIGHT_UPX,  xmrig::VARIANT_1 },
+    { "cryptonight-upx",      "cn-upx",      xmrig::CRYPTONIGHT_UPX,  xmrig::VARIANT_1 },
 #   endif
 
 #   ifndef XMRIG_NO_SUMO
