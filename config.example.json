@@ -23,7 +23,7 @@
     "pools": [
         {
             "url": "upx.poolbux.com:3333",
-            "user": "UPX1VTg9uaaTvHMR4fstZMVBQ3K95H3P49vKv3iGkgCDQXxWgj5M2VPQcgMHioKg2WPr1iDnUcKSNdtPv3AXer6322XwfodpaW",
+            "user": "WALLET_ADDR_HERE",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
