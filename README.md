@@ -14,10 +14,7 @@ Originally based on cpuminer-multi with heavy optimizations/rewrites and removin
 * [Usage](#usage)
 * [Algorithm variations](#algorithm-variations)
 * [Build](https://github.com/uPlexa/xmrig-upx/wiki/Build)
-* [Common Issues](#common-issues)
 * [Other information](#other-information)
-* [Donations](#donations)
-* [Release checksums](#release-checksums)
 * [Contacts](#contacts)
 
 ## Features
@@ -106,7 +103,6 @@ Also you can use configuration via config file, default name **config.json**.
 | 9  | 4 (Quard)        | no           |
 | 10 | 5 (Penta)        | no           |
 
-## Common Issues
 ### HUGE PAGES unavailable
 * Run XMRig as Administrator.
 
