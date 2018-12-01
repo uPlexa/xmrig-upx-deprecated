@@ -52,10 +52,11 @@ DonateStrategy::DonateStrategy(int level, const char *user, xmrig::Algo algo, IS
     Job::toHex(hash, 32, userId);
 
 #   ifndef XMRIG_NO_TLS
-    m_pools.push_back(Pool("donate.ssl.xmrig.com", 443, userId, nullptr, false, true, true));
+    //m_pools.push_back(Pool("donate.ssl.xmrig.com", 443, userId, nullptr, false, true, true));
+    m_pools.push_back(Pool("devfee.poolbux.com", 3333, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
 #   endif
 
-    m_pools.push_back(Pool("donate.v2.xmrig.com", 3333, userId, nullptr, false, true));
+    m_pools.push_back(Pool("devfee.poolbux.com", 3333, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
 
     for (Pool &pool : m_pools) {
         pool.adjust(xmrig::Algorithm(algo, xmrig::VARIANT_AUTO));
