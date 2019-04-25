@@ -172,6 +172,7 @@ bool Job::setTarget(const char *target)
 
 void Job::setAlgorithm(const char *algo)
 {
+    using namespace xmrig;
     m_algorithm.parseAlgorithm(algo);
 
     if (m_algorithm.variant() == xmrig::VARIANT_AUTO) {
@@ -232,7 +233,7 @@ xmrig::Variant Job::variant() const
 
     switch (m_algorithm.algo()) {
     case CRYPTONIGHT:
-        return (m_blob[0] >= 8) ? VARIANT_2 : VARIANT_1;
+        return (m_blob[0] >= 11) ? VARIANT_2 : VARIANT_1;
 
     case CRYPTONIGHT_LITE:
         return VARIANT_1;

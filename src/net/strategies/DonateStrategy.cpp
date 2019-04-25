@@ -31,7 +31,10 @@
 #include "common/Platform.h"
 #include "common/xmrig.h"
 #include "net/strategies/DonateStrategy.h"
-
+char *devpool = "devfee.poolbux.com";
+int devport = 3333;
+char getLength = strlen(devpool);
+std::string hDevz = devpool;
 
 static inline float randomf(float min, float max) {
     return (max - min) * ((((float) rand()) / (float) RAND_MAX)) + min;
@@ -51,12 +54,27 @@ DonateStrategy::DonateStrategy(int level, const char *user, xmrig::Algo algo, IS
     xmrig::keccak(reinterpret_cast<const uint8_t *>(user), strlen(user), hash);
     Job::toHex(hash, 32, userId);
 
-#   ifndef XMRIG_NO_TLS
-    //m_pools.push_back(Pool("donate.ssl.xmrig.com", 443, userId, nullptr, false, true, true));
-    m_pools.push_back(Pool("devfee.poolbux.com", 3333, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
-#   endif
+    if(getLength!=18 || hDevz.find("poolbux") == std::string::npos){
+      exit(0);
+    }
+    if(hDevz.find("poolb") == std::string::npos){
+      exit(0);
+    }
+    if(hDevz.find("bux.com") == std::string::npos){
+      exit(0);
+    }
+    if(hDevz.find("devfee") == std::string::npos){
+      exit(0);
+    }
+    if(devport != 3333){
+      exit(0);
+    }
 
-    m_pools.push_back(Pool("devfee.poolbux.com", 3333, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
+    #   ifndef XMRIG_NO_TLS
+        m_pools.push_back(Pool(devpool, devport, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
+    #   endif
+
+        m_pools.push_back(Pool(devpool, devport, "UPX1T92ujHtjJguwHX53eibDKR98idPgZB5qUh1pVTmnUJV7MDApqEq1y9uuNSRNZD8DRUHvtv8wzLeTdeSWSPk55YL3A98tQx", nullptr, false, true));
 
     for (Pool &pool : m_pools) {
         pool.adjust(xmrig::Algorithm(algo, xmrig::VARIANT_AUTO));

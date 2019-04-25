@@ -86,6 +86,7 @@ public:
 
 private:
     xmrig::Variant variant() const;
+    xmrig::Algo algo() const;
 
     bool m_autoVariant;
     bool m_nicehash;

@@ -37,7 +37,7 @@ template<size_t N>
 MultiWorker<N>::MultiWorker(Handle *handle)
     : Worker(handle)
 {
-    m_memory = Mem::create(m_ctx, m_thread->algorithm(), N);
+	m_memory = Mem::create(m_ctx, m_thread->algorithm(), N);
 }
 
 

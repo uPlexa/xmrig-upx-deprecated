@@ -17,18 +17,11 @@ Originally based on cpuminer-multi with heavy optimizations/rewrites and removin
 * [Other information](#other-information)
 * [Contacts](#contacts)
 
-## Features
-* High performance.
-* Official Windows support.
-* Small Windows executable, without dependencies.
-* x86/x64 support.
-* Support for backup (failover) mining server.
-* keepalived support.
-* Command line options compatible with cpuminer.
-* CryptoNight-Lite support for AEON.
-* Smart automatic [CPU configuration](https://github.com/uPlexa/xmrig-upx/wiki/Threads).
-* Nicehash support
-* It's open source software.
+## UPXTWO HARDFORK SUPPORT
+* use cryptonight-upx/1 for UPX variant 1
+* use cryptonight-upx/2 for UPX variant 2 (or use cryptonight-upxtwo)
+* use cryptonight-upx will revert to variant 1, post hardfork upx v1 will be deprecated
+* Autoswitching from v1 to v2 will not work due to memory changes
 
 ## Download
 * Binary releases: https://github.com/uPlexa/xmrig-upx/releases
@@ -41,10 +34,7 @@ Use [config.xmrig.com](https://config.xmrig.com/xmrig) to generate, edit or shar
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
-                             cryptonight
                              cryptonight-upx
-                             cryptonight-lite
-                             cryptonight-heavy
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
   -u, --user=USERNAME      username for mining server
